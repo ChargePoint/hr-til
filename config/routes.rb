@@ -36,4 +36,8 @@ Rails.application.routes.draw do
 
   post '/posts/:slug/like', to: 'posts#like'
   post '/posts/:slug/unlike', to: 'posts#unlike'
+
+  namespace 'api' do
+    get '/developer_posts', to: 'developer_posts#index'
+  end
 end

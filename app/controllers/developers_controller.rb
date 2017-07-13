@@ -9,6 +9,13 @@ class DevelopersController < ApplicationController
     end
   end
 
+  def show
+    respond_to do |format|
+      format.json {render json: posts}
+      format.html
+    end
+  end
+
   private
 
   def posts
