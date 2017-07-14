@@ -312,6 +312,17 @@ Given 'I visit the author page of an author with a Twitter handle' do
   visit developer_path(developer)
 end
 
+Given 'I visit the author page of an author with a Github handle' do
+  developer = FactoryGirl.create(:developer, github_handle: 'arbonap')
+  visit developer_path(developer)
+end
+
+Then "I see the author's Github link" do
+  within 'header.page_head' do
+    expect(page).to have_link '@arbonap', href: 'https://github.com/arbonap'
+  end
+end
+
 Given 'posts exist for a given author' do
   developer = FactoryGirl.create(:developer, username: 'prolificposter')
   FactoryGirl.create(:post, :for_last_week, developer: developer)

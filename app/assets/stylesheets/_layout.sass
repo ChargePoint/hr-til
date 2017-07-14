@@ -245,15 +245,19 @@ header.page_head
     +responsive(font-size, 3rem, 2rem)
     margin-bottom: 1em
     color: $navy
-  a.author_twitter
+  a.author_twitter, a.author_github
     +hide-text
     display: inline-block
     margin-left: .2em
     width: .8em
     height: .8em
+    vertical-align: baseline
+  a.author_twitter
     background: svg-url(twitter, $twitter-color) center no-repeat
     background-size: contain
-    vertical-align: baseline
+  a.author_github
+    background: svg-url(github, $github-color) center no-repeat
+    background-size: contain
 
 #flash
   position: fixed

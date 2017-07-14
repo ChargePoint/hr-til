@@ -4,8 +4,11 @@
     %h1
       #{pluralize developer.posts_count, "post"}
       by #{developer.username}
-      - handle = developer.twitter_handle
-      - if handle
-        = link_to "@#{handle}", "https://twitter.com/#{handle}", class: "author_twitter", target: "_blank"
+      - twitter_handle = developer.twitter_handle
+      - github_handle = developer.github_handle
+      - if twitter_handle
+        = link_to "@#{twitter_handle}", "https://twitter.com/#{twitter_handle}", class: "author_twitter", target: "_blank"
+      - if github_handle
+        = link_to "@#{github_handle}", "https://github.com/#{github_handle}", class: "author_github", target: "_blank"
 
 = render posts

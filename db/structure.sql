@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.5
+-- Dumped from database version 9.6.1
 -- Dumped by pg_dump version 9.6.1
 
 SET statement_timeout = 0;
@@ -128,7 +128,8 @@ CREATE TABLE developers (
     twitter_handle character varying,
     admin boolean DEFAULT false NOT NULL,
     editor character varying DEFAULT 'Text Field'::character varying,
-    slack_name character varying
+    slack_name character varying,
+    github_handle character varying
 );
 
 
@@ -429,6 +430,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20160622152349'),
 ('20160622154534'),
 ('20160701161129'),
-('20160708201736');
+('20160708201736'),
+('20170714154043');
 
 
