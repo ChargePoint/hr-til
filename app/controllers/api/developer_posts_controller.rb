@@ -1,6 +1,5 @@
 module Api
   class DeveloperPostsController < ApiController
-
     def index
       developer = Developer.find_by!(email: params[:email])
 

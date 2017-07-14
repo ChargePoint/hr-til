@@ -42,8 +42,6 @@ describe Api::DeveloperPostsController, type: :controller do
     end
 
     it 'responds with 404 when the email is not recognized' do
-      developer = FactoryGirl.create :developer, email: 'liz.lemon@hashrocket.com'
-
       get :index, params: {email: 'lemon@hashrocket.com'}, format: :json
 
       expect(response.status).to eq 404
