@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
+  database: hr-til_development
   encoding: unicode
   pool: 5
 
 development:
   <<: *default
-  database: hr-til_development
 
 test: &test
   <<: *default
@@ -16,8 +16,6 @@ cucumber:
 
 staging:
   <<: *default
-  database: hr-til_development
 
 production:
   <<: *default
-  database: hr-til_development
