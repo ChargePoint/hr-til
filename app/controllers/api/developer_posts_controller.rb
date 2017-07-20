@@ -1,10 +1,10 @@
 module Api
   class DeveloperPostsController < ApiController
     def index
-      developer = Developer.find_by!(email: params[:email])
+      developer = Developer.find_by!(username: params[:username])
 
       latest_posts = Post.joins(:developer)
-        .where('developers.email': params[:email])
+        .where('developers.username': params[:username])
         .order(created_at: :desc)
         .limit(3)
         .pluck(:title, :slug)
@@ -12,7 +12,6 @@ module Api
 
       data = {
         data: {
-          developer: developer.slice(:email, :username),
           posts: latest_posts,
         }
       }
