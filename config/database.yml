@@ -1,6 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  password: <%=ENV['DB_PASSWORD']%>
+  host: <%=ENV['DB_HOST']%>
+  port: 5432
+  user: postgres
   pool: 5
 
 development:
@@ -16,8 +20,8 @@ cucumber:
 
 staging:
   <<: *default
-  database: hr-til_development
+  database: hr-til_staging
 
 production:
   <<: *default
-  database: hr-til_development
+  database: hr-til_production
