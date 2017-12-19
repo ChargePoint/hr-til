@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./psql_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+
+  app:
+    image: ruby:2.3-jessie
+    command: bin/start
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - RAILS_ENV=development
+      - DB_HOST=db
+      - DB_PASSWORD=mysecretpassword
+    depends_on:
+      - db
