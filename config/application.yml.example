@@ -1,7 +1,7 @@
 development: &default
   default_twitter_handle: 'hashrocket'
-  google_client_id:
-  google_client_secret:
+  google_client_id: <%=ENV['GOOGLE_CLIENT_ID']%>
+  google_client_secret: <%=ENV['GOOGLE_CLIENT_SECRET']%>
   heroku_production_app_name:
   host: 'www.example.com'
   protocol: 'http://'
